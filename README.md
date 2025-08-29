@@ -323,6 +323,175 @@ print("Odd numbers:", odd_count)
 
 
 
+########################    Pratice  #################
+
+# age = 70
+# is_member = True
+
+# if age > 60 :
+#     if is_member:
+#         print("30% senior discount")
+#     else:
+#         print("20% senior discount.") 
+
+# else:
+#     print("Not eligible for discount")           
+    
+# age = 20
+# s = "Adult"
+
+# if age >= 18:
+#     print("Adult")
+# else:
+#     print("Minor")
+
+# def check_status(a,b,flag):
+
+#     if a >= 0 or b >= 0 and not flag:
+#         return True
+#     elif a < 0 and b < 0 and flag:
+#         return True
+#     else:
+#         return False
+
+# print(check_status(5,-3,False))     
+
+
+# check CAT and HAT are present equal times in a string.
+
+
+# def check_hat_cat(s):
+#     return s.count("cat") == s.count("hat")
+
+# print(check_hat_cat("cathingaa"))
+
+# def check_greater(a):
+#     if a > 100:
+#         print("Big")
+#     else:
+#         print(a)
+
+# a = int(input("Enter Value of a: "))
+# check_greater(a)
+
+# def check_fizz_buzz(a):
+#     if a % 3 == 0 and a % 5 == 0:
+#         return "FizzBuzz"
+#     elif a % 5 == 0:
+#         return "Buzz"
+#     elif a % 3 == 0:
+#         return"Fizz"
+#     else:
+#         return "Wrong Input"
+    
+# a = int(input("Enter a: "))
+# print(check_fizz_buzz(a))    
+
+# EVEN ODD GAME
+
+# def winner(n):
+#     if n % 2 == 0:
+#         print("Friend")
+#     else:
+#         print("You")
+
+# # Example usage:
+# n = int(input("Enter number of apples: "))
+# winner(n)
+
+# def check_odd_even(n):
+#     if n % 2 == 0:
+#         return True
+#     else:
+#         return False
+
+# n = int(input("Enter N: "))
+# print(check_odd_even(n))           
+
+
+# def greatest(a,b,c):
+#     if a > b and c < a:
+#         return a
+#     elif b > c:
+#         return b
+#     else:
+#         return c
+
+# print(greatest(16,2,3))
+# print(greatest(4,2,5))
+
+# Leap Year
+
+# def leap_year(year):
+#     if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
+#         return True
+#     else:
+#         return False
+
+# year = int(input("Enter Year: "))
+# print(leap_year(year))    
+
+
+#  Calculator
+
+# def calculator(a,b,operator):
+
+#     if operator == 1:
+#         return a+b
+#     elif operator == 2:
+#         return a-b
+#     elif operator == 3:
+#         return a*b
+#     else:
+#         print("Invalid Input")
+
+# a = int(input("Enter a: "))
+# b = int(input("Enter b: "))
+# operator = int(input("Enter operator (1:Add, 2:Subtract, 3:Multiply): "))
+# print(calculator(a, b, operator))
+
+
+
+
+# def closest_num(n,m):
+#     q = n // m #it return quotient
+
+#     n1 = m*q
+
+#     n2 = m * (q+1)
+
+
+#     if abs(n - n1) < abs(n-n2):
+#         return n1
+#     elif abs(n-n2) < abs(n-n1):
+#         return n2
+#     else:
+
+#         return n1 if abs(n1) > abs(n2) else n2
+
+# print(closest_num(13,4))   
+
+# def closet_divisible(n,m):
+    
+#     quotient = n // m
+
+#     n1 = m * quotient
+
+#     n2 = m * (quotient+1)
+
+#     if (n - n1) < (n - n2):
+#         return n1
+#     elif (n - n2) < (n - n1):
+#         return n2
+#     else:
+#         if n1 > n2:
+#             return n1
+#         else:
+#             return n2
+
+# n = int(input("Enter n: "))
+# m = int(input("Enter m: "))
+# print(closet_divisible(n,m))
 
 
 
