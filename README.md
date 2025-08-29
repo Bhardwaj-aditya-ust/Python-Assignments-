@@ -320,6 +320,17 @@ print("Odd numbers:", odd_count)
 # n = int(input("Enter N: "))
 # print(fact(n))
 
+# Q3. Call your function is_empty, it takes a parameter and it checks if it is empty or not
+
+def is_empty(a):
+    if len(a) == 0:
+        print("The list is empty")
+    else:
+        print("Not empty")
+
+is_empty([])       
+is_empty([1,2,3,4])   
+
 
 
 
