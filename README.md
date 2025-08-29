@@ -331,6 +331,43 @@ def is_empty(a):
 is_empty([])       
 is_empty([1,2,3,4])   
 
+# Q. Write different functions which take lists. They should calculate_mean,
+#  calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+
+# 1+2+3+4 / 4
+
+def calculate_mean(n):
+    total = 0
+    if len(n) == 0:
+        return 0
+    for num in n:
+        total += num
+    mean = total /len(n)
+    return mean
+
+nums = [1,2,3,4,5,6]
+print("Mean is: ", calculate_mean(nums))   
+
+
+def calculate_mode(nums):
+    max_count = 0
+    mode = []
+    for i in nums:
+        count = 0
+        for j in nums:
+            if j == i:
+                count += 1
+
+        if count > max_count:
+            max_count = count
+            mode = [i]            
+        elif count == max_count and i not in mode:
+            mode.append(i)
+
+    return mode
+
+nums = [1,2,3,4,5,6]
+print("Mode is: ", calculate_mode(nums))    
 
 
 
