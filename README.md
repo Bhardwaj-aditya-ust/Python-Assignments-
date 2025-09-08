@@ -622,6 +622,20 @@ print("Mode is: ", calculate_mode(nums))
 
 # s_list.remove('b')   # just call remove, don’t reassign
 
-# print(s_list)  # ['a', 'c', 'd', 'e']
+# print(s_list)  # ['a', 'c', 'd', 'e']  
 
-# print("".join(s_list)) 
+# print("".join(s_list))  # converting back list to string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
