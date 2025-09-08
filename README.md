@@ -554,6 +554,12 @@ print("Mode is: ", calculate_mode(nums))
 # str1 = "HelloWorld"
 # inserchar(str1, '!', 5)
 
+# def insert_char(str1, char1, position):
+#     return str1[:position] + char1 + str1[postion:]
+
+# str1 = "My Name is aditya"
+# inserchar(str1, 'A', 11)
+
 # def insertchar(str1, char1, position):
 #     temp_str = ""
 #     for i in range(len(str1)):
