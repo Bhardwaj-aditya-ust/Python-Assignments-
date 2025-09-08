@@ -628,7 +628,25 @@ print("Mode is: ", calculate_mode(nums))
 
 
 
+#  Remove all occurrences of a character in a string
 
+# Examples: 
+
+# Input : s = "geeksforgeeks"
+#         c = 'e'
+# Output : s = "gksforgks"
+
+# Input : s = "geeksforgeeks"
+#         c = 'g'
+# Output : s = "eeksforeeks"
+
+
+
+# str1 = "geeksforgeeks"
+
+# s_list = str1.replace('g', "")
+
+# print(s_list)
 
 
 
