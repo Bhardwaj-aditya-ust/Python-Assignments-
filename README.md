@@ -614,4 +614,14 @@ print("Mode is: ", calculate_mode(nums))
 # position = 1
 # print(remove_char(str1, position))
 
+#  Simpler way
 
+# str1 = "abcde"
+
+# s_list = list(str1)
+
+# s_list.remove('b')   # just call remove, don’t reassign
+
+# print(s_list)  # ['a', 'c', 'd', 'e']
+
+# print("".join(s_list)) 
