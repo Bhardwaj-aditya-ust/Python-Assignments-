@@ -648,7 +648,41 @@ print("Mode is: ", calculate_mode(nums))
 
 # print(s_list)
 
+# Concatenation of Two Strings
+# Examples
 
+# Input: s1 = “Hello”, s2 = “World”
+# Output: “HelloWorld”
+# Explanation: Joining “Hello” and “World” results in “HelloWorld”.
+
+# s1 = "Hello "
+# s2 = "World"
+# s3 = s1 + s2
+# print(s3)
+
+
+# Reverse a string
+
+# Example:
+
+# input: s = "abdcfe"
+# Output: "efcdba"
+
+# s = "abdcfe"
+# # Reverse the string using slicing
+# reverse = s[::-1]
+# print(reverse)
+
+# def reverse_str(str1):
+#     temp_list = []
+#     for i  in range(len(str1) - 1, -1, -1):
+#         temp_list.append(str1[i])
+        
+#     return ''.join(temp_list)    
+
+# if __name__ == "__main__":
+#     str1 = "abdcfe" 
+#     print(reverse_str(str1))
 
 
 
