@@ -542,6 +542,33 @@ print("Mode is: ", calculate_mode(nums))
 # print(closet_divisible(n,m))
 
 
+# Insert a character in String at a Given Position
+
+# Examples:Input: 
+# s = "HelloWorld", c = '!', pos = 5
+# Output: Hello!World
+
+# def inserchar(str1, char1, position):
+#     return str1[:position] +char1 + str1[position:]
+
+# str1 = "HelloWorld"
+# inserchar(str1, '!', 5)
+
+# def insertchar(str1, char1, position):
+#     temp_str = ""
+#     for i in range(len(str1)):
+#         if i == position:
+#             temp_str += char1
+        
+#         temp_str += str1[i]     
+    
+#     if position > len(str1):
+#         temp_char += char1
+        
+#     return temp_char    
+    
+# str1 = "HelloWorld"
+# inserchar(str1, '!', 20)        
 
 
 
