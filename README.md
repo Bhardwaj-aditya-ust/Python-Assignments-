@@ -577,4 +577,20 @@ print("Mode is: ", calculate_mode(nums))
 # inserchar(str1, '!', 20)        
 
 
+# Remove a Character from a Given Position
+
+# Examples: 
+
+# Input : s = "abcde",  pos = 1
+# Output : s = "acde"
+
+# def remove_char(str1, position):
+#     # Slicing
+#     return str1[:position] + str1[position+1:]
+
+# str1 = "abcde"
+# position = 1
+
+# print(remove_char(str1, position))
+
 
