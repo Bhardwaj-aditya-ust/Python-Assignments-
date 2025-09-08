@@ -594,3 +594,24 @@ print("Mode is: ", calculate_mode(nums))
 # print(remove_char(str1, position))
 
 
+
+# def remove_char(str1, position):
+    
+#     if position < 0 or position >= len(str1):
+#         return str1
+    
+# #     Coverting str to list
+#     s_list = list(str1)
+    
+# #     Removing char
+#     s_list.pop(position)
+    
+    
+#     return ''.join(s_list)
+
+
+# str1 = "abcde"
+# position = 1
+# print(remove_char(str1, position))
+
+
