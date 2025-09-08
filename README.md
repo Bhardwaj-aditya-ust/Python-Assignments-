@@ -569,9 +569,9 @@ print("Mode is: ", calculate_mode(nums))
 #         temp_str += str1[i]     
     
 #     if position > len(str1):
-#         temp_char += char1
+#         temp_str += char1
         
-#     return temp_char    
+#     return temp_str    
     
 # str1 = "HelloWorld"
 # inserchar(str1, '!', 20)        
