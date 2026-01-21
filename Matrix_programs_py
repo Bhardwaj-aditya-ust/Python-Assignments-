@@ -22,3 +22,24 @@ res = a + b
 print(res)
 ...............................................
 # Multiply Two Matrices
+
+a = [[1, 2],
+     [3, 4]]
+
+b = [[5, 6],
+     [7, 8]]
+
+# result matrix initialized with zeros
+res = [[0, 0],
+       [0, 0]]
+
+for i in range(len(a)):          # rows of A
+    for j in range(len(b[0])):   # columns of B
+        for k in range(len(b)):  # columns of A / rows of B
+            res[i][j] += a[i][k] * b[k][j]
+
+for row in res:
+    print(row)
+
+#.........................................................
+
