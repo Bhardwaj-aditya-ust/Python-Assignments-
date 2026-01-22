@@ -51,3 +51,11 @@ a = [[1, 4, 5], [7, 3], [4], [46, 7, 3]]
 b = [ele for sub in a for ele in sub]  
 res = np.prod(b)
 print(res)
+
+# Another way
+
+import math
+a = [[1, 4, 5], [7, 3], [4], [46, 7, 3]]
+b = [element for sub in a for element in sub] 
+res = math.prod(b)
+print(res)
