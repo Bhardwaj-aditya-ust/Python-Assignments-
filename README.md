@@ -685,6 +685,349 @@ print("Mode is: ", calculate_mode(nums))
 #     print(reverse_str(str1))
 
 
+#   ............     Function Practice Exercises  ...............................
+#   .............................................................................
+
+# LESSER OF TWO EVENS: Write a function that returns the lesser of two given numbers if both numbers are even, but returns the greater if one or both numbers are odd
+
+# lesser_of_two_evens(2,4) --> 2
+# lesser_of_two_evens(2,5) --> 5
+
+# Check
+# lesser_of_two_evens(2,4)
+# Check
+# lesser_of_two_evens(2,5)
+
+# a = int(input("Enter a: "))
+# b = int(input("Enter b: "))
+# def lesser_of_two(a,b):
+    
+
+#     if a%2 == 0 and b%2 == 0:
+#         if a < b:
+#             result = a
+#         else: 
+#             result = b    
+    
+#     else:
+#         if a > b:
+#             result = a
+#         else:
+#             result = b
+
+#     return result
+
+# print(lesser_of_two(a,b))
+
+#               or
+
+# a = int(input("Enter a: "))
+# b = int(input("Enter b: "))
+# def lesser_of_two(a,b):
+#     if a%2 == 0 and b%2 == 0:
+#         return min(a,b)
+#     else:
+#         return max(a,b)
+    
+# print(lesser_of_two(a,b))  
+
+# .............................................
+
+# ANIMAL CRACKERS: Write a function takes a two-word string and returns True if both words begin with same letter
+# animal_crackers('Levelheaded Llama') --> True
+# animal_crackers('Crazy Kangaroo') --> False
+
+# def animal_crackers(text):
+    
+#     new_str = text.split()
+
+#     first = new_str[0]
+#     second = new_str[1]
+
+#     if first[0] == second[0]:
+#         return True
+#     else:
+#         return False
+
+#        OR
+
+# def animal_crackers(str):
+#     words = str.lower().split()
+
+#     for i in range(len(words) - 1):
+#         if words[i][0] != words[i+1][0]:
+#             return False
+#     return True
+
+#          OR
+
+# def animal_crackers(str):
+#     word = str.split()
+#     return word[0][0].lower() == word[1][0].lower()
+
+# print(animal_crackers('Levelheaded Llama'))
+# print(animal_crackers('Crazy Kangaroo'))
+
+# .......................................................................
+
+# MAKES TWENTY: Given two integers, return True if the sum of the integers is 20 or if one of the integers is 20. If not, return False
+# makes_twenty(20,10) --> True
+# makes_twenty(12,8) --> True
+# makes_twenty(2,3) --> False
+
+# def makes_twenty(a,b):
+
+#     if a+b == 20 or a == 20 or b == 20:
+#         return True
+#     else:
+#         return False
+
+#  OR
+#     return (a+b) == 20 or a == 20 or b == 20
+
+# print(makes_twenty(20,10))
+# print(makes_twenty(12,8))
+# print(makes_twenty(2,3))
+
+# .............................................. LEVEL 1 PROBLEMS .....................................................#
+# Question 1:
+# OLD MACDONALD: Write a function that capitalizes the first and fourth letters of a name
+ 
+# old_macdonald('macdonald') --> MacDonald
+# Note: 'macdonald'.capitalize() returns 'Macdonald'
+
+# def old_macdonald(name):
+#     return name[0].upper() + name[1:3] + name[3].upper() + name[4:]
+
+# print(old_macdonald('macdonald'))
+
+#    OR ...using capitalize...
+
+# def old_macdonald(name):
+
+#     return name[:3].capitalize() + name[3:].capitalize()
+
+# print(old_macdonald('macdonald'))
+
+# ........................................................................................................#
+
+# MASTER YODA: Given a sentence, return a sentence with the words reversed
+# master_yoda('I am home') --> 'home am I'
+# master_yoda('We are ready') --> 'ready are We'
+# Note: The .join() method may be useful here. The .join() method allows you to join together strings in a list with some connector string. 
+# For example, some uses of the .join() method:
+
+# >>> "--".join(['a','b','c'])
+# >>> 'a--b--c'
+# This means if you had a list of words you wanted to turn back into a sentence, you could just join them with a single space string:
+
+# >>> " ".join(['Hello','world'])
+# >>> "Hello world"
+
+# def master_yoda(s):
+#     word = s.split()
+#     return ' '.join(word[::-1])
+
+# print(master_yoda('I am home'))
+
+# ...............................................................................................................#
+
+# ALMOST THERE: Given an integer n, return True if n is within 10 of either 100 or 200
+# almost_there(90) --> True
+# almost_there(104) --> True
+# almost_there(150) --> False
+# almost_there(209) --> True
+# NOTE: abs(num) returns the absolute value of a number
+
+# def almost_there(n):
+
+    # if n+10 >= 100 and n-10 <= 100:
+    #     return True
+    # elif n+10 >= 200 and n-10 <= 200:
+    #     return True
+    # else:
+    #     return False
+
+    #                    OR (Using abs i.e., absolute)
+
+    # Distance in math = absolute difference
+    # -->     distance = abs(target - n)
+
+    # return abs(100-n) <= 10 or abs(200-n) <= 10
+    
+# print(almost_there(90))
+# print(almost_there(104))
+# print(almost_there(150))
+# print(almost_there(209))    
+
+# ..........................................  LEVEL 2 PROBLEMS  ................................................#
+
+# FIND 33:
+# Given a list of ints, return True if the array contains a 3 next to a 3 somewhere.
+
+# has_33([1, 3, 3]) → True
+# has_33([1, 3, 1, 3]) → False
+# has_33([3, 1, 3]) → False
+
+# def has_33(l1):
+
+#     for i in range(len(l1) -1):
+#         if l1[i] == 3 and l1[i+1] == 3:
+#             return True
+    
+#     return False
+
+#         OR
+
+# def has_33(num):
+#     for i in range(0,len(num) - 1):
+#         if num[i:i+2] == [3,3]:
+#             return True
+ 
+#     return False
+     
+# print(has_33([1, 3, 3]))
+# print(has_33([1, 3, 1, 3]))
+# print(has_33([3, 1, 3]))
+
+# .............................................................................................................#
+
+# PAPER DOLL: Given a string, return a string where for every character in the original there are three characters
+# paper_doll('Hello') --> 'HHHeeellllllooo'
+# paper_doll('Mississippi') --> 'MMMiiissssssiiippppppiii'
+
+# def paper_doll(str):
+#     result = ''
+#     for char in str:
+#         result = result + char*3
+#     return result    
+
+# print(paper_doll('Hello')) 
+# print(paper_doll('Mississippi'))
+
+# ..............................................................................................................#
+
+# BLACKJACK: Given three integers between 1 and 11, if their sum is less than or equal to 21, return their sum. 
+# If their sum exceeds 21 and there's an eleven, reduce the total sum by 10. Finally, if the sum (even after adjustment) exceeds 21, return 'BUST'
+# blackjack(5,6,7) --> 18
+# blackjack(9,9,9) --> 'BUST'
+# blackjack(9,9,11) --> 19
+
+# def blackjack(a,b,c):
+#     total_sum = a + b + c
+#     if total_sum <= 21:
+#         return total_sum
+#     # elif total_sum <= 31 and (a == 11 or b == 11 or c == 11) :
+#     #       OR
+#     elif total_sum -10 <= 21 and (a == 11 or b == 11 or c == 11) :
+#         return total_sum - 10
+#     else:
+#         return('BUST')
+
+#                   OR
+
+# def blackjack(a,b,c):
+
+#     if sum([a,b,c]) <= 21:
+#         return sum([a,b,c])
+#     # elif 11 in [a,b,c] and sum([a,b,c]) <= 31:
+#     #                    OR
+#     elif 11 in [a,b,c] and sum([a,b,c]) - 10 <= 21:
+#         return sum([a,b,c]) - 10 
+#     else:
+#         return ("BUST")   
+
+# print(blackjack(5,6,7))
+# print(blackjack(9,9,9)) 
+# print(blackjack(11,11,11))
+
+# .............................................................................................................#
+
+# SUMMER OF '69: Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6 
+# and extending to the next 9 (every 6 will be followed by at least one 9). Return 0 for no numbers.
+# summer_69([1, 3, 5]) --> 9
+# summer_69([4, 5, 6, 7, 8, 9]) --> 9
+# summer_69([2, 1, 6, 9, 11]) --> 14
+
+
+# def summer_69(arr):
+#     total = 0
+#     add = True
+#     for num in arr:
+#         while add:
+#             if num != 6:
+#                 total += num
+#                 break
+#             else:
+#                 add = False
+#         while not add:
+#             if num != 9:
+#                 break
+#             else:
+#                 add = True
+#                 break
+#     return total
+
+#            OR
+
+# def summer_69(arr):
+#     total = 0
+#     add = True
+
+#     for num in arr:
+#         if num == 6:
+#             add = False
+#         elif num == 9 and add == False:
+#             add = True
+#         elif add:
+#             total += num
+#     return total                
+
+# print(summer_69([1,3,5]))
+# print(summer_69([4,5,6,7,8,9]))     
+# print(summer_69([2, 1, 6, 9, 11]))         
+
+# ............................................................................................................#
+# SPY GAME: Write a function that takes in a list of integers and returns True if it contains 007 in order
+#  spy_game([1,2,4,0,0,7,5]) --> True
+#  spy_game([1,0,2,4,0,5,7]) --> True
+#  spy_game([1,7,2,0,4,5,0]) --> False
+
+# ....................................................
+# This works when it will be in continue --> 0,0,7
+
+# def spy_game(l1):
+#     for i in range(len(l1) -1):
+#         if l1[i] == 0 and l1[i+1] == 0 and l1[i+2] == 7:
+#             return True
+    
+#     return False
+# ....................................................
+# def spy_game(l1):
+#     n = 0
+#     code = [0,0,7]
+#     for i in l1:
+#         if i == code[n]:
+#             n += 1
+#             if n == 3:
+#                 return True
+#     return False
+# ........................................................
+#             OR(Pop Method)
+# def spy_game(nums):
+#     code = [0,0,7,'x']
+#     for num in nums:
+#         if num == code[0]:
+#             code.pop(0)
+
+#     return len(code) == 1        
+
+# print(spy_game([1,2,4,0,0,7,5]))
+# print(spy_game([1,0,2,4,0,5,7]))
+# print(spy_game([1,7,2,0,4,5,0]))
+
+# ..............................................................................................................#
+
 
 
 
