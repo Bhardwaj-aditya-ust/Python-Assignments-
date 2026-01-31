@@ -1,0 +1,260 @@
+import re
+
+text_to_search = '''
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+1234567890
+
+Ha HaHa
+
+MetaCharacters (Need to be escaped):
+. ^ $ * + ? { } [ ] \ | ( )
+
+coreyms.com
+
+321-555-4321
+123.555.1234
+123*555*1234
+
+800-555-1234
+900-555-1234
+
+Mr. Aditya
+Mr Anurag
+Mr Smith
+Ms Davis
+Mrs. Robinson
+Mr. T
+
+cat
+mat
+pat
+bat
+
+'''
+
+sentence = 'Start a sentence and then bring it to an end'
+
+# print('\tTAB')
+# print(r'\tTAB')
+
+#  Compile Method
+
+# pattern = re.compile(r'abc')
+
+# pattern = re.compile(r'.') # we will matches everything avaiable in that str or list
+# pattern = re.compile(r'\.') # Return only that special char matche
+
+# pattern = re.compile(r'\d')  # return Digit(0-9)
+
+# pattern = re.compile(r'\D')  # return not a digit(0-9)
+
+# pattern = re.compile(r'\w')   # return word char (a-z, A-Z, 0-9, _)
+
+# pattern = re.compile(r'\W') # Not a word char
+
+# pattern = re.compile(r'\s') # return whitespace(space, tab, newline)
+
+# pattern = re.compile(r'\S')  # Not Whitespace (space, tab, newline)
+
+#...........  Anchors .........(To check invisible positions)
+
+# pattern = re.compile(r'\b')          # Word Boundary
+# pattern = re.compile(r'\bHa')        #cheking for particular which has word 
+# pattern = re.compile(r'\BHa')        #only which are not seprate 
+
+# pattern = re.compile(r'\B') # not a word Boundary
+
+# pattern = re.compile(r'^') # Beginning of a string
+# pattern = re.compile(r'^Start')  # it will return match bcos it is start of the str.
+
+# pattern = re.compile(r'$') # end of string
+# pattern = re.compile(r'end$') # bcos str ends with end so it will match
+
+# matches = pattern.finditer(sentence)
+
+# for match in matches:
+#     print(match)
+
+
+
+# pattern = re.compile(r'coreyms\.com')  # for url search
+
+#                 To check phone number in str
+# pattern = re.compile(r'\d\d\d') # return first 3 digit of number
+# pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')  It return all phone number seprated by -,. or *.
+
+#                 Only want match a phone number which has a dash or a dot
+# pattern = re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d\d')     # using [] helps in matching only which we require
+
+#                 Only get 800 and 900 start digit number
+# pattern = re.compile(r'[89]00[-.]\d\d\d[-.]\d\d\d')
+
+#                 should matches with all ending with'at' but not with 'bat'
+# pattern = re.compile(r'[^b]at') 
+
+#        We can use QUANTIFIERS to match more than one char at once
+# *   - 0 or more
+# +   - 1 or more
+# ?   - 0 or one
+# {3} - Exact Number
+# {3,4} - Range of numbers (Minimum, Maximum)
+
+# pattern = re.compile(r'\d{3}.\d{3}.\d{4}')
+
+#     To match prefixes and the entire name that comes afterward for the name available in list  #
+# pattern = re.compile(r'Mr\.?')  # using '?' helps to get prefixes which don't have '.' or any special char.
+
+# pattern = re.compile(r'Mr\.?\s[A-Z]\w*')   # it is just for MR
+
+#                using group so that we can match both Mr and Mrs
+
+# pattern = re.compile(r'(Mr|Ms|Mrs)\.?\s[A-Z]\w*')
+
+# matches = pattern.finditer(text_to_search)
+
+# for match in matches:
+#     print(match)
+
+#                Regular Ex to get email id in str
+# emails = '''
+# CoreyMSchafer@gmail.com
+# corey.schafer@university.edu
+# corey-321-schafer@my-work.net
+# '''
+#         My triages
+
+# pattern = re.compile(r'\w+@\w+\.com') 
+# pattern = re.compile(r'\w+.\w+@\w+\.edu') 
+# pattern = re.compile(r'\w+-\w+-\w+@\w+-\w+.net')
+
+#       Triage for all email within same pattern
+# pattern = re.compile(r'[\w.-]+@[\w-]+\.(com|edu|net)')
+
+
+#        Tutorial 
+
+# pattern = re.compile(r'[a-zA-Z]+@[a-zA-Z]+\.com')
+
+# For all emails:
+# pattern = re.compile(r'[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)')
+
+
+# matches = pattern.finditer(emails)
+
+# for match in matches:
+#     print(match)
+
+# print(text_to_search[1:4])    
+
+
+# .......................................................................................................#
+
+#                                        Trying with exisiting file 
+
+# pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')
+# pattern = re.compile(r'[89]00[-.]\d\d\d[-.]\d\d\d')  # for number starting with 800 or 900
+
+# pattern = re.compile(r'[1-5]') # Will matches with all num availble from 1 to 5
+
+# pattern = re.compile(r'[a-z]')  # will matches all lowercase alphabets
+# pattern = re.compile(r'[a-zA-Z]') # for all uppercase and lowercase
+# pattern = re.compile(r'[^a-zA-Z]')  # it will matches with all otherthan upper or lowercase alphabets
+
+
+# count = 0 # just trying
+
+# with open('data.txt', 'r') as f:
+#     contents = f.read()
+    
+#     matches = pattern.finditer(contents)
+
+#     for match in matches:
+#         print(match)
+
+        # count += 1 # just trying
+
+# print(count) # just trying
+
+         
+
+# ........................................................................................................#
+
+
+# #  How to capture information from groups
+
+# urls = '''
+# https://www.google.com
+# http://coreyms.com
+# https://youtube.com
+# https://www.nasa.gov
+# '''
+# # pattern = re.compile(r'\w+://\w+.\w+\.(com|gov)') # my triage 
+
+# # Tutorial
+# pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+
+# # Use our group to capture information from URLs
+
+# matches = pattern.finditer(urls)
+
+# for match in matches:
+#     print(match.group())
+#     # print(match.group(1))
+#     # print(match.group(2))
+#     # print(match.group(3))
+
+# # Using Back reference to reference our captured group
+# # Sub method , can use to perform substitution
+
+# sub_url = pattern.sub(r'\2\3', urls)
+
+# print(sub_url)
+
+# ........................................................................................................#
+
+#       Other methods to show patterns
+
+# pattern = re.compile(r'(Mr|Ms|Mrs)\.?\s[A-Z]\w+')
+
+# pattern = re.compile(r'\d{3}.\d{3}.\d{4}')
+
+# matches = pattern.findall(text_to_search)  # it will only return particular group
+
+# for match in matches:
+#     print(match)
+
+# .........................................................................................................#
+
+#  Match Method
+
+# # pattern = re.compile(r'Start')
+
+# pattern = re.compile(r'dne')
+
+# # matches = pattern.match(sentence)  # matching at the beginning of the str
+# #        or
+# matches = pattern.search(sentence)  # same it also return only first letter
+
+# print(matches)
+
+# .........................................................................................................#
+
+#                           ..... FLAGS ....
+
+#  We wanted to match a word but match it wheather it was in uppercase or lowercase or a mixture of both.
+# if i wanted to match the word Start in our sentence could be uppercase or lowercase then normally to create a pattern like this we do 
+# a char set that started with uppercase S or lowercase s 
+ 
+
+# pattern = re.compile(r'[Ss][Tt][Aa]') #instead of writing this we use Ignore case Flag
+
+# pattern = re.compile(r'start', re.IGNORECASE) # no need to write full flag , can use just I
+
+# pattern = re.compile(r'start', re.I)
+
+# matches = pattern.search(sentence)
+
+# print(matches)
+
+# .........................................................................................................#
