@@ -258,3 +258,31 @@ sentence = 'Start a sentence and then bring it to an end'
 # print(matches)
 
 # .........................................................................................................#
+    # Set in Python - II
+
+def common_in_set(a, b):
+    # Your code here
+    return a.intersection(b)
+
+# Function to find difference in sets
+# Should return the difference in sets
+def diff(a, b):
+    # Your code here
+    return a.difference(b)
+
+
+# Function to find union of sets
+# Should return the union of sets
+def all_in_set(a, b):
+    # Your code here
+    return a.union(b)
+    
+a = {1, 2, 3, 4, 5}
+b = {6, 7, 8, 2, 3}
+
+print(*sorted(all_in_set(a, b)))
+print(*sorted(common_in_set(a, b)))
+print(*sorted(diff(a, b)))
+
+# .........................................................................................................#
+
