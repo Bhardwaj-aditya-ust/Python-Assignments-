@@ -1,0 +1,243 @@
+# amount = 10
+# tax = 0.06
+# total = amount + amount * tax
+# print(total)
+
+
+#  Age Calculator
+
+# age = int(input("How old you're?\n"))
+
+# decades = age // 10
+# years = age % 10
+# print("You are "+ str(decades) + " decades and " + str(years) + " years old.")
+
+
+# ................. Conditional ....................
+
+# temp = int(input("Enter Temperature: \n"
+# if temp > 80:
+#     print("It's too hot")
+#     print("Stay Inside")
+# if temp <60:
+#     print("It's too cold!")
+#     print("stay inside!")
+# else:
+#     print("Enjoy The outdoor")    
+
+#  ...OR
+
+# temp = int(input("Enter Temperature: \n"))
+
+# if temp > 80 or temp <60:
+#     print("stay inside!")
+# else:
+#     print("Enjoy The outdoor")   
+
+# ...Forecast
+
+# temp = int(input("Enter Temperature: \n"))
+# forecast = str(input("Enter Weather: \n"))
+
+# if temp < 80 and forecast != "rainy":
+#     print("Go Outside")
+# else:
+#     print("Stay Inside")                                                    
+
+# ............................
+
+# forecast = input("Enter Weather: \n").lower()
+
+# if not forecast == "rainy":
+#     print("Go outside")
+# else:
+#     print("Stay Inside!")
+
+# ..............................
+
+# raining = True
+
+# if not raining:
+#     print("Go outside!")
+# else:
+#     print("Stay Inside!")
+
+
+# .......................................
+
+# ROCK, PAPER, SCISSORS
+
+# com_choice = 'scissors'
+# user_choice = input("Rock, Paper or Scissors?\n").lower()
+
+# if com_choice == user_choice:
+#     print("Tie!!")
+
+# elif user_choice == "rock" and com_choice == "scissors":
+#     print("You Win!!!")
+
+# elif user_choice == "paper" and com_choice == "rock":
+#     print("You Win!!!")
+
+# elif user_choice == "scissors" and com_choice == "Paper":
+#     print("You Win!!!")
+
+# else:
+#     print("You Lose...")
+
+# .............................................
+
+# Random
+# import random
+
+# roll = random.randint(1,6)
+# guess = int(input("Guess the dice roll:\n"))
+
+# if guess == roll:
+#     print("Correct! you win....")
+# else:
+#     print("You rolled " + str(guess) + " and The computer rolled a " + str(roll) + " you Lose!!!")    
+
+
+# ... Let Computer try random choice in this game
+
+# import random
+
+# com_choice = random.choice(['rock','paper','scissors'])
+# user_choice = input("Rock, Paper or Scissors?\n").lower()
+
+# if com_choice == user_choice:
+#     print("Tie!!")
+
+# elif user_choice == "rock" and com_choice == "scissors":
+#     print("You Win!!!")
+
+# elif user_choice == "paper" and com_choice == "rock":
+#     print("You Win!!!")
+
+# elif user_choice == "scissors" and com_choice == "Paper":
+#     print("You Win!!!")
+
+# else:
+#     print("You Lose...")
+
+# ..........................................................
+
+# Create a List of internet Slang Acronyms
+
+# acronyms = ['LOL','IDK','SMH','TBH']
+# print(acronyms[2])
+
+# Creating an empty list using append 
+# acronyms = []
+# acronyms.append('LOL')
+# acronyms.append('IDK')
+# acronyms.append('SMH')
+# acronyms.append('TBH')
+# print(acronyms)
+
+# # Input
+# acronyms = ['LOL','IDK','SMH']
+# print(acronyms)
+# acronyms.append('TBH')
+# acronyms.append('BFN')
+# print(acronyms)
+
+# # Output
+# ['LOL', 'IDK', 'SMH']
+# ['LOL', 'IDK', 'SMH', 'TBH', 'BFN']
+
+# ...remove
+# acronyms = ['LOL', 'IDK', 'SMH', 'TBH', 'BFN']
+# # acronyms.remove('SMH')
+# # or
+# del acronyms[4]
+# print(acronyms)
+
+# o/p -> ['LOL', 'IDK', 'TBH', 'BFN']
+
+
+# acronyms = ['LOL', 'IDK', 'SMH', 'TBH', 'BFN']
+# word = input("Check Your word: \n").upper()
+# if word in acronyms:
+#     print(word + ' is in the List')
+# else:
+#     print(word + "not in the List") 
+   
+
+# acronyms = ['LOL', 'IDK', 'SMH', 'TBH', 'BFN']
+# for i in acronyms:
+#     print(i)
+
+# ...............................................
+# Sum up all the expenses in a list
+
+# expenses = [10.50,8,5,15,20,5,3]
+# sum = 0
+# for x in expenses:
+#     sum = sum + x
+# print('You Spent $',sum,sep='')
+
+# Or using sum function
+
+# sum = sum(expenses)
+# print(sum)
+
+# ..................................................
+
+# Loops Using Range
+
+# for i in range(7):
+#     print(i)
+
+# total = 0
+# expenses = []
+# for i in range(7):
+#     expenses.append(float(input("Enter an Expense: ")))
+# total_sum = sum(expenses)
+# print("You have spent $", total_sum,sep='')
+
+
+# total = 0
+# expenses = []
+# num_expenses = int(input("Enter Your number of Expenses: "))
+# for i in range(num_expenses):
+#     expenses.append(float(input("Enter an Expense: ")))
+
+# total_sum = sum(expenses)
+# print("You have spent $", total_sum,sep='')
+
+# ............................................................
+
+# Loan Calculator
+
+# # Get details of loan
+# money_owed = float(input("How much omey do you owe, in $?\n"))
+# apr = float(input("What is the annual percentage rate of the loan?\n"))
+# payment = float(input("How much will you pay monthly?\n"))
+# months = int(input("How many months do you want to see the results for\n?"))
+
+# monthly_rate = apr/100/12
+# # Using for loop for as much as much user wanted
+
+# for i in range(months):
+#     # calculate interest to pay
+#     interest_paid = money_owed * monthly_rate
+
+#     # add in interest
+#     money_owed = money_owed + interest_paid
+    
+#     if (money_owed - payment < 0):
+#         print("The Last Payment is", money_owed)
+#         print("you paid off the laon in", i+1, 'months')
+#         break
+     
+#     # make_payment
+#     money_owed = money_owed - payment
+
+#     print('paid', payment, 'of which', interest_paid, 'was interest', end = ' ')
+#     print('Now I owe', money_owed)
+
+
+# .......................................................................................
+# .......................................................................................
