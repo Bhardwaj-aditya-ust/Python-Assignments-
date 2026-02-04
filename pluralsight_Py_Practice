@@ -240,4 +240,254 @@
 
 
 # .......................................................................................
-# .......................................................................................
+
+# ...Dictionary
+
+# acronyms = {}
+# acronyms['IDK'] = 'Laugh out Loud'
+# acronyms['LOL'] = "I don't Know"
+# acronyms['TBH'] = 'to be honest'
+# print(acronyms)
+
+# acronyms = {'LOL': 'Laugh out Loud',
+#             'IDK': "I don't Know",
+#             'TBH': 'to be honest'}
+# print(acronyms['LOL'])
+
+# # Changing key's value
+# acronyms['TBH'] = 'Honestly'
+# print(acronyms)
+
+# # Deleting 
+# del(acronyms['LOL'])
+# print(acronyms)
+
+# # Accessing a key we use *get*(return None Type) we will not error code will execute
+# Error
+# definition = acronyms['TWT']
+
+# To avoid error
+# definition = acronyms.get('TWT')
+# if definition:
+#     print(definition)
+# else:
+#     print("Key doesn't exist")
+
+# acronyms = {'LOL': 'Laugh out Loud',
+#             'IDK': "I don't Know",
+#             'TBH': 'to be honest'}
+
+# sentence = 'IDK' + ' what happened ' + 'TBH'
+# translation = acronyms.get('IDK') + ' what happened '+ acronyms.get('TBH')
+
+# print('Sentence:',sentence)
+# print('Translation:',translation)
+
+# ........................................
+
+# Movie Sechudule program
+
+# current_movies = {'LSD':'11:00 AM',
+#                   'LSD 1':'1:00 PM',
+#                   'LSD 2':'3:00 PM',
+#                   'LSD 3':'5:00 PM'}
+# print("We are Showing --->")
+# # ......... TO SHOW MOVIE i.e; KEY
+
+# for movie in current_movies:
+#     print(movie)
+
+
+# # ......... TO SHOW TIME i.e; VALUE
+
+# # for time in current_movies.values():
+# #     print(time)
+
+
+# # ......... TO SHOW BOTH MOVIE AND TIME i.e; KEY:VALUE
+
+# # print("We are Showing --->")
+# # for movie, time in current_movies.items():
+# #     print(movie,':',time)
+
+# movie = input("Which Movie would you like to Watch:\n")
+
+# showtime = current_movies.get(movie)
+
+# if showtime == None:
+#     print("Not playing this Movie!!")
+# else:
+#     print(movie, "is playing at:", showtime)    
+
+
+# .......................................................................
+
+# Combining List with Dictionary
+
+# menus = [['Egg','chai','coffee'],
+#          ['BLT', 'PB&J','sandwhich'],
+#          ['soup','salad','Spaghetti','Taco']]
+
+# # print('Breakfast:\t' , menus[0])
+# # print('Lunch:\t' , menus[1])
+# # print('Dinner:\t' , menus[2])
+
+# # print(menus[0][2])
+
+# menus = {'Breakfast' : ['Egg','chai','coffee'],
+#          'Lunch' : ['BLT', 'PB&J','sandwhich'],
+#          'Dinner': ['soup','salad','Spaghetti','Taco']}
+
+# To get values of inside dict
+# for val in menus['Breakfast']:
+#     print(val)
+
+# # for key, value in menus.items():
+# #     print(key,':',value)
+# # ......................................With other variable name.....
+# for name, menu in menus.items():
+#     print(name,':',menu)    
+
+
+# # .... EX: Person....
+# person = {'name':'Aditya smith',
+#           'city':'Sydney',
+#           'age':'28'}
+
+# print(person.get('name'), 'is', person.get('age'), 'years old.')
+
+
+# ............................................................................
+
+# Take input and print out only email address.
+
+# contacts = {'number' : 4,
+#             'students':
+#                [
+#                 {'name': 'Aditya Smith', 'email': 'adisam@gmail.com'},
+#                 {'name': 'anuj Smith', 'email': 'anujsam@gmail.com'},
+#                 {'name': 'hamza Smith', 'email': 'hamzasam@gmail.com'},
+#                 {'name': 'archit Smith', 'email': 'arcsam@gmail.com'}
+#                ]
+# }
+# print('Student Emails:')
+# # for Student in contacts['students']:
+# #     print(Student)
+
+# for student in contacts['students']:
+#     print(student['email'])
+
+# .............................................................................
+
+# Reading JSON
+# Requesting data from internet using request package and how to install it.
+
+# import requests
+
+# response = requests.get('http://api.open-notify.org/astros.json')
+# json = response.json()
+# print(json)
+# for person in json['people']:
+#     print(person['name'])
+
+# .............................................................................
+
+# Python virtual environment to manange different version of different packages.
+
+# import requests
+
+# response = requests.get('http://api.open-notify.org/astros.json')
+# json = response.json()
+# print(json)
+# for person in json['people']:
+#     print(person['name'])
+
+# ..............................................................................
+
+# Requesting Another JSON data, From WEATHER API.
+
+
+# import requests
+
+# city = input("Enter your city: ")
+# # url = 'http://api.weatherapi.com/v1/current.json?key=0992a104715141af93984112252711&q='+city+'&aqi=no'
+# # response = requests.get(url)
+# # weather_json = response.json()
+# # .... or just ....
+# response = requests.get('http://api.weatherapi.com/v1/current.json?key=0992a104715141af93984112252711&q='+city+'&aqi=no')
+# weather_json = response.json()
+
+# print(weather_json)
+
+# temp = weather_json.get('current').get('temp_f')
+# description = weather_json.get('current').get('condition').get('text')
+
+# print("Today's weather in", city, 'is',description, 'and temp is',temp,'degree.')
+
+# .............................................................................................................................
+# .............................................................................................................................
+
+#  ****MODULE 6 : FUNCTIONS****
+
+# def greet(name):
+#     print('Hello',name)
+
+# input_name = input("Enter your name:\n")
+
+# greet(input_name)
+
+# Global
+
+# input_name = input("Enter your name:\n")
+# def greet():
+#     print("Hello",input_name)
+# greet()
+
+# Using local as we use the greet function in different name value.
+
+# def greet(name):
+#     print("Hello", name)
+
+# name = input("Enter your name:\n")
+# greet(name)
+# name2 = input("Enter your name:\n")    
+# greet(name2)
+
+# Addition
+
+# def addition(a,b):
+#     return a + b
+# a = int(input("Enter a:\n"))
+# b = int(input("Enter b:\n"))
+
+# print('The result is:',addition(a, b))
+
+# ..............................
+
+# # DICE GAME
+# import random
+
+# def roll_dice():
+#     dice_total = random.randint(1,6) + random.randint(1,6)
+#     return dice_total
+# def main():
+#     player_1 = input("Enter player 1's name:\n")
+#     player_2= input("Enter player 2's name:\n")
+
+#     roll1 = roll_dice()
+#     roll2 = roll_dice()
+
+#     print(player_1,"rolled",roll1)
+#     print(player_2,"rolled",roll2)
+
+#     if (roll1 > roll2):
+#         print('Player 1 is the winner!!!')
+#     elif (roll1 == roll2):
+#         print("It's a Tie")    
+#     else:
+#         print('Player 2 is the winner!!!')    
+
+# main()    
+
+# ..............................................................................
+
