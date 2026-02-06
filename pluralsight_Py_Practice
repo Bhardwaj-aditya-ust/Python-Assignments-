@@ -491,3 +491,203 @@
 
 # ..............................................................................
 
+# Objects and classes
+
+# class Robot_Dog:
+
+#     def __init__(self,name,breed):
+#         self.name = name
+#         self.breed = breed
+
+# my_dog = Robot_Dog('Spot','Chihuaha')
+# print(my_dog.name)
+# print(my_dog.breed)
+
+# ...........................
+# class Method --> it is a function that belongs to a class.(Self as parameter)
+# Function --> it is defined separately.
+
+# class Robot_Dog:
+
+#     def __init__(self,name,breed):
+#         self.name = name
+#         self.breed = breed
+
+#     def bark(self):
+#         print('Woof! Woof!')
+
+# my_dog = Robot_Dog('Spot','Chihuaha')
+# print(my_dog.name)
+# print(my_dog.breed)
+# my_dog.bark()
+
+# .......................................................................
+
+# Create company class
+
+# class Employee:
+
+#     def __init__(self,fname,lname, pay):
+#         self.fname = fname
+#         self.lname = lname 
+#         self.pay = pay
+
+#     def calc_paycheck(self):
+#         return self.pay/52
+
+# class company:
+
+#     def __init__(self):
+#         self.employees = []
+
+#     def add_employee(self, new_employee):
+#         self.employees.append(new_employee)
+
+# def main():
+
+#     my_company = company()
+
+#     e1 = Employee('Adi','Singh',200000)
+#     my_company.add_employee(e1)
+
+#     print(my_company.employees)
+
+# main()    
+
+
+# class Employee:
+
+#     def __init__(self, fname, lname, pay):
+#         self.fname = fname
+#         self.lname = lname
+#         self.pay = pay
+
+#     def cal_paycheck(self):
+#         return self.pay / 52
+
+# class company:
+
+#     def __init__(self):
+#         self.employees = []
+
+#     def add_employee(self,new_employee):
+#         self.employees.append(new_employee)
+
+#     def display_employees(self):
+#         print("Current Employee:")
+#         for i in self.employees:
+#             print(i.fname, i.lname)
+#         print('................')
+
+#     def pay_employee(self):
+#         print('Paying Employee')
+#         for i in self.employees:
+#             print('Paycheck for:', i.fname, i.lname)
+#             print('Amount:', i.cal_paycheck())
+#             print('...........................')            
+
+
+# def main():
+    
+#     my_company = company()
+
+#     e1 = Employee('Adi','Hess',50000)
+#     my_company.add_employee(e1)
+#     e2 = Employee('Aj','Hess',25000)
+#     my_company.add_employee(e2)
+#     e3 = Employee('Ar','Hess',60000)
+#     my_company.add_employee(e3)
+
+#     my_company.display_employees()
+#     my_company.pay_employee()
+# main()
+
+
+
+
+# class Company:
+
+#     def __init__(self):
+#         self.employees = []
+
+#     def add_employee(self, new_employee):
+#         self.employees.append(new_employee)
+
+#     def display_employees(self):
+#         print("Current Employees:")
+#         for i in self.employees:
+#             print(i.fname,i.lname)
+#         print('....................')
+
+#     def pay_employee(self):
+#         print("Paying Employees")
+#         for i in self.employees:
+#             print('Paycheck for:', i.fname, i.lname)
+#             print(f'Amount: ${i.calc_paycheck():,.2f}')
+#             print('...................')
+
+
+# class Employee:
+
+#     def __init__(self,fname,lname,pay):
+#         self.fname = fname
+#         self.lname = lname
+#         self.pay = pay
+
+#     def calc_paycheck(self):
+#         return self.pay/52    
+
+
+# def main():
+    
+#     my_company = Company()
+
+#     e1 = Employee('Adi','Hess',50000)
+#     my_company.add_employee(e1)
+#     e2 = Employee('Aj','Hess',25000)
+#     my_company.add_employee(e2)
+#     e3 = Employee('Ar','Hess',60000)
+#     my_company.add_employee(e3)
+
+#     my_company.display_employees()
+#     my_company.pay_employee()
+# main()    
+
+# ..........................................................................
+
+# class Company:
+#     def __init__(self):
+#         self.employees = []
+
+#     def add_employee(self, employee):
+#         self.employees.append(employee)
+
+
+# class Employee:
+#     def __init__(self, fname, lname, pay):
+#         self.fname = fname
+#         self.lname = lname
+#         self.pay = pay
+
+#     def calc_paycheck(self):
+#         return self.pay / 52
+
+#     def __repr__(self):
+#         return f"Employee(fname='{self.fname}', lname='{self.lname}', pay={self.pay})"
+
+
+# def main():
+#     my_company = Company()
+
+#     e1 = Employee('Adi', 'Smith', 200000)
+#     my_company.add_employee(e1)
+
+#     print(my_company.employees)
+
+
+# main()
+
+# ...................................................................................
+
+
+
