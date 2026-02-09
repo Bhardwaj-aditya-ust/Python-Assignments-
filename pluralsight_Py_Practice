@@ -690,4 +690,128 @@
 # ...................................................................................
 
 
+#  Inheritance
+
+# class Robot:
+
+#     def __init__(self, name):
+#         self.name = name
+#         self.position = [0,0]
+#         print('My name is', self.name)
+
+#     def walk(self, x):
+#         self.position[0] = self.position[0] + x
+#         print('New position:', self.position)  
+
+# class Robot_Dog(Robot):
+#     def make_noise(self):
+#         print('Woof Woof!')     
+
+# my_robot_dog = Robot_Dog('Bud')        
+# my_robot_dog.walk(10)
+# my_robot_dog.make_noise()
+
+# METHOD OVERRIDING
+
+# class Robot:
+
+#     def eat(self):
+#         print("I'm hungry")
+
+# class Robot_Dog(Robot):
+#     def __init__(self, name):
+#         self.name = name
+
+#     def eat(self):
+#         super().eat()
+#         print('I Like bacon!!')        
+# my_robot_dog  = Robot_Dog('Bud')
+# my_robot_dog.eat()
+# # print(Robot_Dog('Bud').eat())
+
+
+
+
+# Using Inheritance for adding new employee
+class Company:
+    def __init__(self):
+        self.employees = []
+
+    def add_employee(self, employee):
+        self.employees.append(employee)
+
+    def display_employees(self):
+        print("Current Employees:")
+        for i in self.employees:
+            print(i.fname, i.lname)
+        print('....................')
+
+    def pay_employee(self):
+        print("Paying Employees")
+        for i in self.employees:
+            print('Paycheck for:', i.fname, i.lname)
+            print(f'Amount: ${i.calc_paycheck():,.2f}')
+            print('...................')
+
+
+class Employee:
+    def __init__(self, fname, lname):
+        self.fname = fname
+        self.lname = lname
+
+    def calc_paycheck(self):
+        raise NotImplementedError("Subclasses must implement this method")
+
+
+class SalaryEmployee(Employee):
+    def __init__(self, fname, lname, salary):
+        super().__init__(fname, lname)
+        self.salary = salary
+
+    def calc_paycheck(self):
+        return self.salary / 52
+
+
+class HourlyEmployee(Employee):
+    def __init__(self, fname, lname, weekly_hours, hourly_rate):
+        super().__init__(fname, lname)
+        self.weekly_hours = weekly_hours
+        self.hourly_rate = hourly_rate
+
+    def calc_paycheck(self):
+        return self.weekly_hours * self.hourly_rate
+
+class CommissionEmployee(SalaryEmployee):
+    def __init__(self, fname, lname, salary, sales_num, com_rate):
+        super().__init__(fname, lname, salary)
+        self.sales_num = sales_num
+        self.com_rate = com_rate
+
+    def calc_paycheck(self):
+        regular_salary = super().calc_paycheck()
+        total_commission = self.sales_num * self.com_rate
+        return regular_salary+ total_commission
+
+def main():
+    my_company = Company()
+
+    e1 = SalaryEmployee('Adi', 'Smith', 50000)
+    my_company.add_employee(e1)
+
+    e2 = HourlyEmployee('AJ', 'Smith', 25, 50)
+    my_company.add_employee(e2)
+
+    e3 = CommissionEmployee('DJ', 'Smith', 30000, 5, 200)
+    my_company.add_employee(e3)
+
+    my_company.display_employees()
+    my_company.pay_employee()
+
+
+main()
+
+
+
+
+
 
