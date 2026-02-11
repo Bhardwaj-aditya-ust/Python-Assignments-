@@ -1,1 +1,49 @@
+# Sort according to an Array
+
+class Solution:
+    def relativeSort(self, a1, a2):
+        a1.sort()
+        result = []
+        seen = set()
+
+        for x in a2:
+            if x in seen:
+                continue
+            seen.add(x)
+
+            while x in a1:
+                result.append(x)
+                a1.remove(x)
+
+        result.extend(a1)
+        return result
+
+a1 = [2, 1, 2, 3, 4]
+a2 = [2, 1, 2]
+
+sol = Solution()
+print(sol.relativeSort(a1, a2))
+
+#.................................................................#
+
+
+#  First Repeating Element
+
+
+class Solution:
+    def firstRepeated(self, arr):
+        
+        for i in range(len(arr)):  # i is index of arr
+            for j in range(i + 1, len(arr)):
+                if arr[i] == arr[j]:
+                    return i + 1
+        
+        return -1       
+
+arr = [1, 5, 3, 4, 3, 5, 6]
+
+obj = Solution()
+print(obj.firstRepeated(arr))      
+        
+
 
