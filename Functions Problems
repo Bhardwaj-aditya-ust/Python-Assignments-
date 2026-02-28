@@ -2,3 +2,10 @@
 
 def returnValueFunction(n):
     return n * 2
+
+
+#Write the helloFunction below. It should have one statement
+#print("Hello")
+#code here
+def helloFunction():
+    print("Hello")
