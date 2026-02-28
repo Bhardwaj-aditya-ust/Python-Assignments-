@@ -1,0 +1,4 @@
+# Function returnValueFunction that takes n as a parameter and uses the return keyword to return double the value of n.
+
+def returnValueFunction(n):
+    return n * 2
