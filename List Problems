@@ -1,0 +1,19 @@
+# List Traversal
+
+def listTraversal(arr):
+    #code here
+    # for i in arr:
+    #     print
+    
+    print(*(arr))
+    
+    # OR
+    # print(' '.join(map(str,arr)))
+    
+    # OR List Comprehension
+    # l1 = [str(i) for i in arr]
+    # print(" ".join(l1))
+    
+    # OR
+    # for item in map(str,arr):
+    #     print(item, end=' ')
