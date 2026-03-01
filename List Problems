@@ -17,3 +17,31 @@ def listTraversal(arr):
     # OR
     # for item in map(str,arr):
     #     print(item, end=' ')
+
+# Length of The List
+
+def listLength(arr):
+    #code here
+    return len(arr)
+
+# Sum The List
+
+def listSum(arr):
+    #code here
+    
+    # OR
+    
+    # return sum(arr)
+    
+    # OR
+    
+    # total = 0
+    # for i in arr:
+    #     total += i
+        
+    # return total
+    
+    # OR
+    total = sum([i for i in arr])
+    return total
+
