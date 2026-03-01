@@ -23,3 +23,10 @@ def firstDigit(n):
     #code here
     a = str(n)
     return a[0]
+
+# Print GFG n times
+class Solution:
+    def printGfg(self, n):
+        # Code here
+        for i in range(1,n+1):
+            print('GFG',end=" ")
